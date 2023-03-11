@@ -1,0 +1,128 @@
+using System;
+
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Elija una raza: ");
+        Console.WriteLine("1. Bulldog: ");
+        Console.WriteLine("2. Dalmata: ");
+        Console.WriteLine("3. Pastor Aleman: ");
+        Console.WriteLine("4. Golden Retriever");
+
+        int seleccion = int.Parse(Console.ReadLine());
+
+        switch (seleccion)
+        {
+
+            case 1:
+                Bulldog bulldog = new Bulldog();
+                Console.WriteLine($"El Bulldog{bulldog.Ladrar()}");
+                Console.WriteLine($"El Bulldog{bulldog.Dormir()}");
+                Console.WriteLine($"El Bulldog{bulldog.Comer()}");
+                break;
+            case 2:
+                Dalmata dalmata = new Dalmata();
+                Console.WriteLine($"El Dalmata{dalmata.Ladrar()}");
+                Console.WriteLine($"El Dalmata{dalmata.Dormir()}");
+                Console.WriteLine($"El Dalmata{dalmata.Comer()}");
+                break;
+            case 3:
+                PastorAleman pastoraleman = new PastorAleman();
+                Console.WriteLine($"El Pastor Aleman{pastoraleman.Ladrar()}");
+                Console.WriteLine($"El Pastor Aleman{pastoraleman.Dormir()}");
+                Console.WriteLine($"El Pastor Aleman{pastoraleman.Comer()}");
+                break;
+            case 4:
+                Golden golden = new Golden();
+                Console.WriteLine($"El Golden Retriever{golden.Ladrar()}");
+                Console.WriteLine($"El Golden Retriever{golden.Dormir()}");
+                Console.WriteLine($"El Golden Retriever{golden.Comer()}");
+                break;
+            default:
+                Console.WriteLine("Opción inválida");
+                break;
+        }
+
+    }
+    public abstract class Perro
+    {
+        public virtual string Ladrar()
+
+        {
+            return "Perro ladrando";
+        }
+        public abstract string Dormir();
+        public abstract string Comer();
+
+
+        public class Bulldog : Perro
+        {
+            public override string Ladrar()
+            {
+                return "El Bulldog esta ladrando";
+            }
+            public override string Dormir()
+            {
+                return " El Bulldog esta durmiendo";
+
+            }
+            public override string Comer()
+            {
+                return "El Bulldog esta comiendo";
+            }
+        }
+        public class Dalmata : Perro
+        {
+            public override string Ladrar()
+            {
+                return "El perror Dalmata esta ladrando";
+            }
+            public override string Dormir()
+            {
+                return "El perro Dalmata esta durmiendo";
+            }
+            public override string Comer()
+            {
+                return "El perro Dalmata esta comiendo";
+            }
+
+
+            public class PastorAleman : Perro
+            {
+                public override string Ladrar()
+                {
+                    return "El perro Pastor Aleman esta ladrando";
+                }
+                public override string Dormir()
+                {
+                    return " El perro Pastor Aleman esta durmiendo";
+
+                }
+                public override string Comer()
+                {
+                    return "El perro Pastor Aleman esta comiendo";
+                }
+
+            public class Golden : Perro
+                {
+                public override string Ladrar()
+                {
+                      return "El perro Golden Retriever esta ladrando";
+                }
+                public override string Dormir()
+                {
+                      return " El perro Golden Retriever esta durmiendo";
+
+                 }
+                public override string Comer()
+                  {
+                     return "El perro Golden Retriever esta comiendo";
+                  }
+
+                }
+            }
+        }
+    }
+}
